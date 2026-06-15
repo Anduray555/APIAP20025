@@ -4,6 +4,9 @@ FROM php:8.2-apache
 # Habilitar mod_rewrite para Slim
 RUN a2enmod rewrite
 
+# Instalar extensiones necesarias para PDO MySQL
+RUN docker-php-ext-install pdo pdo_mysql
+
 # Establecer la carpeta de trabajo
 WORKDIR /var/www/html
 
